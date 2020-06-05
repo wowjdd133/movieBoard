@@ -6,6 +6,7 @@ type User {
   phoneNumber: String!
   password: String!
   create_at: Date!
+  boards: [ID]
 }
 
 type Board {
@@ -15,7 +16,7 @@ type Board {
   author: ID!
   create_at: Date!
   update_at: Date
-  comment: ID!
+  comment: [ID]
 }
 
 type Comment {
@@ -25,7 +26,7 @@ type Comment {
   board: ID!
   create_at: Date!
   update_at: Date
-  recomment: ID!
+  recomment: [ID]
 }
 
 type Recomment {
@@ -42,12 +43,12 @@ scalar Date
 type Query {
   Users: [User]
   Boards: [Board]
-  Comments: [Comment]
-  Recomments: [Recomment]
-  user(_id: ID!): User
-  board(_id: ID!): Board
-  comment(_id: ID!): Comment
-  recomment(_id: ID!): Recomment
+  BoardById(_id: ID!):[Board]
+  Comments(_id: ID!): [Comment]
+  Recomments(_id: ID!): [Recomment]
+  User(_id: ID!): User
+  Board(_id: ID!): Board
+  
 }
 
 input UserInput {
@@ -62,21 +63,18 @@ input BoardInput {
   title: String!
   content: String!
   author: ID!
-  create_at: Date!
 }
 
 input CommentInput {
   content: String!
   author: String!
   board: ID!
-  create_at: Date!
 }
 
 input RecommentInput {
   content: String!
   author: String!
   comment: ID!
-  create_at: Date!
 }
 
 type Mutation {
