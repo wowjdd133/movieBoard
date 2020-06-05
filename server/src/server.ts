@@ -17,7 +17,8 @@ mongoose.Promise = global.Promise;
 mongoose.connect("mongodb+srv://dbUser:mP4r9J81W4HeUVA9@cluster0-qmlot.mongodb.net/board?retryWrites=true&w=majority", { 
   useUnifiedTopology: true,
   useCreateIndex: true,
-  useNewUrlParser: true}); 
+  useNewUrlParser: true,
+  useFindAndModify: false,}); 
 
 const app = express();
 
