@@ -18,8 +18,8 @@ const BoardSchema = new Schema({
     type: Date,
     default: moment(),
   },
-  comment: {
-    type: Schema.Types.ObjectId,
+  comments: {
+    type: [Schema.Types.ObjectId],
     ref: 'Comment'
   },
   view_cnt: {
@@ -28,4 +28,4 @@ const BoardSchema = new Schema({
   }
 });
 
-export default mongoose.model('board', BoardSchema);
+export default mongoose.model('Board', BoardSchema);

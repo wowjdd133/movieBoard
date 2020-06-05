@@ -23,8 +23,8 @@ const CommentSchema = new Schema({
     type: Date,
     default: moment(),
   },
-  recomment: {
-    type: Schema.Types.ObjectId,
+  recomments: {
+    type: [Schema.Types.ObjectId],
     ref: 'Recomment'
   }
 });
