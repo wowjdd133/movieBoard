@@ -15,7 +15,7 @@
     "@types/react-router-dom": "^5.1.5",
     "@types/styled-components": "^5.1.0",
     "classnames": "^2.2.6",
-    "eslint": "^7.1.0",
+    "eslint": "^9.26.0",
     "jest": "^26.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
